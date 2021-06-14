@@ -1,0 +1,1 @@
+For Kannur find by district curl -X GET "https://cdn-api.co-vin.in/api/v2/appointment/sessions/public/findByDistrict?district_id=297&date=14-06-2021" -H  "accept: application/json" -H  "Accept-Language: hi_IN"
