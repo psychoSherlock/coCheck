@@ -1,0 +1,36 @@
+<!doctype html>
+<html>
+  <meta charset="utf-8">
+
+  <title>Athul's vaccine checker</title>
+  <meta name="description" content="Cowin vaccine checker">
+  <meta name="author" content="@psychoSherlock">
+   <link rel="stylesheet" href="{{url_for('static', filename='style.css')}}"> 
+  
+   <body>
+   <h1>Athuls Personal Cowaccine checker</h1>
+   <h3>Without OTP :D</h3>
+<table>
+<tr>
+	<th>Center Name</th>
+	<th>Age Limit</th>
+	<th>Total Capacity</th>
+</tr>
+{%for i in range(items)%}
+	{%set centerName = jsonData['sessions'][i]['name']%}
+	{%set vaccineName = jsonData['sessions'][i]['vaccine']%}
+	{%set age_limit = jsonData['sessions'][i]['min_age_limit']%} 
+	{%set totalCapacity = jsonData['sessions'][i]['available_capacity']%}
+	{%set dose1 = jsonData['sessions'][i]['available_capacity_dose1']%}
+	{%set dose2 = jsonData['sessions'][i]['available_capacity_dose2']%}
+	
+
+	  <tr>
+	    <td>{{centerName}}</td>
+	    <td>{{age_limit}}</td>
+	    <td>{{totalCapacity}}</td>
+	  </tr>
+{%endfor%}
+</table>
+   </body>
+</html>

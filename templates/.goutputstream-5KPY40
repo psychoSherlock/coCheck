@@ -1,0 +1,9 @@
+<!doctype html>
+<html>
+   <body>
+{%for things in range(len(data))%}
+	#centerName = jsonData['sessions'][i]['name']##
+      <p>{{centerName}}</p>
+{%endfor%}
+   </body>
+</html>
