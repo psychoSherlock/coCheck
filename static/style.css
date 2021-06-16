@@ -1,13 +1,43 @@
-table, th, td {
-  border: 1px solid #8390FA;
-  color: white;
+@import url('https://fonts.googleapis.com/css2?family=Do+Hyeon&family=Pangolin&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+
+:root {
+	--font-comic: 'Pangolin', cursive;
+	--font-cur: 'Poppins', sans-serif;
+	--font-prim: 'Do Hyeon', sans-serif;
 }
 
 body {
-	background-color: #1D2F6F;
-	}
+	background-color: #24292E;
+}
 	
+table, th, td {
+	border: 3px solid #A239A0;
+	color: white;
+}
+
+
+th, td {
+  padding: 15px;
+  font-family: var(--font-cur);
+}
+
+.graph {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+.header {
+	text-align: center;
+
+}
 	
-h1 {
+.nor-text {
 	color:white;
+	font-family: var(--font-prim);
+}
+
+h1 {
+	font-family: var(--font-comic) !important;
 }

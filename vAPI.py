@@ -22,15 +22,16 @@ kannurID = 297
 class cowin:
 	def __init__(self, address):
 		self.address = address
-	def check(self):
+	def check(self, time):
+            print(f"Fetching data for {self.address} on {time}")
 
-		url = f"https://cdn-api.co-vin.in/api/v2/appointment/sessions/public/findByDistrict?district_id={self.address}&date={today}"
-		data = requests.get(url, headers)
+            url = f"https://cdn-api.co-vin.in/api/v2/appointment/sessions/public/findByDistrict?district_id={self.address}&date={time}"
+            data = requests.get(url, headers)
 
-		# dump = json.dumps(data.text, indent=4) # For coverting python to json
-		jsonData = json.loads(data.text) # for loading data as json
-		
-		return jsonData
+            # dump = json.dumps(data.text, indent=4) # For coverting python to json
+            jsonData = json.loads(data.text) # for loading data as json
+            
+            return jsonData
 """
 		for i in range(len(jsonData['sessions'])):
 		    centerName = jsonData['sessions'][i]['name']
