@@ -6,18 +6,30 @@
 	<meta name="description" content="Cowin vaccine checker">
 	<meta name="author" content="@psychoSherlock">
 	<link rel="stylesheet" href="{{url_for('static', filename='style.css')}}"> 
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
   
 	<body>
+		<a class="fa fa-home home-icon" style="font-size:2.5em;" href="/"></a>
 		<div class="header">
+			
 
 			<h1 class="nor-text">Athul's Personal Cowaccine checker</h1>
-			<h3 class="nor-text">Without OTP :D</h3>
-			<h4 class="nor-text">Found {{items}} centers on {{time}}</h4>
+			<h2 class="nor-text">Without OTP :D</h2>
+			<h3 class="nor-text">Found {{items}} centers on {{time}}</h3>
 
 			<div id="date-div">
-				<label for="date-field">Vaccine for </label>
+				<label class="nor-text" for="place-field">Vaccine Centers in</label>
+	
+				<select id="place-field" name="place">
+					<option value="kannur">Kannur (297)</option>
+				</select>
+	
+				<label class="nor-text" for="date-field">for</label>
+	
 				<input type="date" name="Choose date" id="date-field">
-				<button onclick="searchDate()">Search</button>
+				
+				<button style="background-color:#9a4ef1" onclick="searchDate()">Find</button>
+	
 			</div>
 
 			</div>

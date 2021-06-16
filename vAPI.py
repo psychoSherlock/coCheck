@@ -3,12 +3,8 @@
 import requests
 import json
 import datetime
-from terminaltables import AsciiTable
 
-tableData = []
 
-table = AsciiTable(tableData)
-tableData.append(['Vaccine', 'Address', 'Min-Age', 'Total', 'Dose1', 'Dose2' ])
 
 today = datetime.date.today().strftime('%d-%m-%y') # For date time format
 
@@ -20,12 +16,13 @@ kannurID = 297
 
 
 class cowin:
-	def __init__(self, address):
+	def __init__(self, address, time=today):
 		self.address = address
-	def check(self, time):
-            print(f"Fetching data for {self.address} on {time}")
+		self.time = time
+	def check(self):
+            print(f"Fetching data for {self.address} on {self.time}")
 
-            url = f"https://cdn-api.co-vin.in/api/v2/appointment/sessions/public/findByDistrict?district_id={self.address}&date={time}"
+            url = f"https://cdn-api.co-vin.in/api/v2/appointment/sessions/public/findByDistrict?district_id={self.address}&date={self.time}"
             data = requests.get(url, headers)
 
             # dump = json.dumps(data.text, indent=4) # For coverting python to json
