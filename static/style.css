@@ -24,9 +24,8 @@ th, td {
 }
 
 .graph {
-	display: flex;
-	justify-content: center;
-	align-items: center;
+	width: 100%;
+	float: left;
 }
 .header {
 	text-align: center;
