@@ -10,7 +10,7 @@ function searchDate(){
     date = reverseDate('date-field')
     console.log(date)
     if (date) {
-        window.location = '/date/' + date
+        window.location = '/date=' + date
     }
     else{
         alert("Please specify a date")

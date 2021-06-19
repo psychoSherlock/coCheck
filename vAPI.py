@@ -16,19 +16,38 @@ kannurID = 297
 
 
 class cowin:
-	def __init__(self, address, time=today):
-		self.address = address
+	def __init__(self,time=today):
 		self.time = time
-	def check(self):
-            print(f"Fetching data for {self.address} on {self.time}")
+	def checkById(self, id):
+		"""
+		Return list of sessions from api
+		"""
+		self.id = id
+		print(f"Fetching data for ID {id} on {self.time}")
 
-            url = f"https://cdn-api.co-vin.in/api/v2/appointment/sessions/public/findByDistrict?district_id={self.address}&date={self.time}"
-            data = requests.get(url, headers)
+		url = f"https://cdn-api.co-vin.in/api/v2/appointment/sessions/public/findByDistrict?district_id={id}&date={self.time}"
+		data = requests.get(url, headers)
 
-            # dump = json.dumps(data.text, indent=4) # For coverting python to json
-            jsonData = json.loads(data.text) # for loading data as json
-            
-            return jsonData
+		# dump = json.dumps(data.text, indent=4) # For coverting python to json
+		jsonData = json.loads(data.text) # for loading data as json
+		
+		return jsonData
+
+# ADd more. Also add location getting feature
+
+	def checkByDis(self, distr):
+		self.distr = distr
+		"""
+		Return list of CENTERS from api
+		"""
+		print(f'Fetching data for district ID {distr} on date {self.time}')
+		url = f"https://cdn-api.co-vin.in/api/v2/appointment/sessions/public/calendarByPin?pincode={distr}&date={self.time}"
+
+		data = requests.get(url, headers)
+		jsonData = json.loads(data.text)
+
+		return jsonData
+
 """
 		for i in range(len(jsonData['sessions'])):
 		    centerName = jsonData['sessions'][i]['name']

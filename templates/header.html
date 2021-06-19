@@ -13,8 +13,8 @@
 		<div class="header">
 			
 
-			<h1 class="nor-text">Athul's Personal Cowaccine checker</h1>
-			<h2 class="nor-text">Without OTP :D</h2>
+			<h1 class="nor-text">Co Check!</h1>
+			<h2 class="nor-text">Check Covid Vaccine Without OTP :D</h2>
 			<h3 class="nor-text">Found {{items}} centers on {{time}}</h3>
 
 			<div id="date-div">
@@ -29,37 +29,10 @@
 				<input type="date" name="Choose date" id="date-field">
 				
 				<button style="background-color:#9a4ef1" onclick="searchDate()">Find</button>
-	
+                {% block content %}
+                {% endblock %}
 			</div>
+        </div>
 
-			</div>
-	<div class="graph">
-		<table>
-			<tr>
-				<th>ID</th>
-				<th>Center Name</th>
-				<th>Age Limit</th>
-				<th>Total Capacity</th>
-			</tr>
-		{%for i in range(items)%}
-			{%set centerName = jsonData['sessions'][i]['name']%}
-			{%set vaccineName = jsonData['sessions'][i]['vaccine']%}
-			{%set age_limit = jsonData['sessions'][i]['min_age_limit']%} 
-			{%set totalCapacity = jsonData['sessions'][i]['available_capacity']%}
-			{%set dose1 = jsonData['sessions'][i]['available_capacity_dose1']%}
-			{%set dose2 = jsonData['sessions'][i]['available_capacity_dose2']%}
-			
-
-			<tr>
-
-					<td>{{i}}</td>
-					<td>{{centerName}}</td>
-					<td>{{age_limit}}</td>
-					<td>{{totalCapacity}}</td>
-			</tr>
-		{%endfor%}
-		</table>
-	</div>
-	<script src="{{url_for('static', filename='script.js')}}"></script>
-   </body>
+    </body>
 </html>

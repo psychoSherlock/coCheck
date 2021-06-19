@@ -1,0 +1,127 @@
+@import url("https://fonts.googleapis.com/css2?family=Do+Hyeon&family=Pangolin&family=Poppins:wght@500&family=Short+Stack&display=swap");
+
+:root {
+  --font-comic: "Pangolin", cursive;
+  --font-cur: "Poppins", sans-serif;
+  --font-prim: "Do Hyeon", sans-serif;
+  --font-secondary: "Short Stack", cursive;
+  --body-bg: #24292e;
+  --table-side: #ff5a5f;
+}
+
+body {
+  background-color: #24292e;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+h1,
+h2,
+h3 {
+  font-family: var(--font-secondary) !important;
+  color: #ffffff;
+  text-align: center;
+}
+
+button {
+  padding: 0.5em 2em;
+  border: 0.16em solid rgba(255, 255, 255, 0);
+  border-radius: 2em;
+  box-sizing: border-box;
+  text-decoration: none;
+  font-family: var(--font-comic);
+  font-weight: 300;
+  color: #ffffff;
+  text-shadow: 0 0.04em 0.04em rgba(0, 0, 0, 0.35);
+  text-align: center;
+  transition: all 0.5s;
+  background-color: #9a4ef1;
+  cursor: pointer;
+}
+button:hover {
+  background-color: var(--table-side);
+  padding: 5%;
+  font-weight: bolder;
+}
+
+.home-icon {
+  color: #f03a47;
+  position: absolute;
+  top: 0;
+  left: 0;
+  text-decoration: none;
+  padding: 0.1em;
+}
+
+.home-icon:hover {
+  text-decoration: none;
+  color: #9a4ef1;
+}
+
+.main-land-container {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.3); /* For card */
+  transition: 0.3s;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  margin-top: 2em;
+  position: absolute; /*For centering */
+  left: 50%;
+  transform: translate(-50%, 0%);
+  text-align: center;
+}
+
+.main-land-container:hover {
+  box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.5);
+}
+
+.main-land-items {
+  margin: 2em;
+}
+
+.input-field {
+  font-family: var(--font-cur);
+  border: 0;
+  border-bottom: 2px solid var(--table-side);
+  outline: 0;
+  padding: 7px;
+  background: transparent;
+  color: #fff;
+  transition: border-color 0.2s;
+}
+
+.input-field:focus {
+  padding-bottom: 6px;
+  font-weight: 700;
+  border-width: 3px;
+  border-image: linear-gradient(to right, #11998e, #38ef7d);
+  border-image-slice: 1;
+}
+
+/* reset input */
+.input-field:required,
+.input-field:invalid {
+  box-shadow: none;
+}
+
+label {
+  color: #ffffff;
+  font-family: var(--font-secondary);
+}
+
+#heart {
+  color: #f03a47;
+}
+
+footer {
+  flex: 0 0 50px;
+  margin-top: auto;
+}
+
+
+@media screen and (max-height: 688px) {
+  footer {
+    margin-top: 35em;
+  }
+}

@@ -1,0 +1,52 @@
+<!doctype html>
+<html>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width">
+	<title>Athul's vaccine checker</title>
+	<meta name="description" content="Cowin vaccine checker">
+	<meta name="author" content="@psychoSherlock">
+	<link rel="stylesheet" href="{{url_for('static', filename='style.css')}}"> 
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  
+	<body>
+		<a class="fa fa-home home-icon" style="font-size:2.5em;" href="/"></a>
+		<div class="header">
+			
+
+			<h1 class="nor-text">Athul's Personal Cowaccine checker</h1>
+			<h2 class="nor-text">Without OTP :D</h2>
+			<h3 class="nor-text">Found {{items}} centers on {{time}}</h3>
+
+	<div class="graph">
+		<table>
+			<tr>
+				<th>ID</th>
+				<th>Center Name</th>
+				<th>Age Limit</th>
+				<th>Total Available</th>
+				<th>Fee type</th>
+			</tr>
+		{%for i in range(items)%}
+			{%set centerName = jsonData['sessions'][i]['name']%}
+			{%set vaccineName = jsonData['sessions'][i]['vaccine']%}
+			{%set age_limit = jsonData['sessions'][i]['min_age_limit']%} 
+			{%set totalCapacity = jsonData['sessions'][i]['available_capacity']%}
+			{%set dose1 = jsonData['sessions'][i]['available_capacity_dose1']%}
+			{%set dose2 = jsonData['sessions'][i]['available_capacity_dose2']%}
+			{%set fee_type = jsonData['sessions'][i]['fee_type']%}
+			{%set fee = jsonData['sessions'][i]['fee']%}
+			
+
+			<tr>
+
+					<td>{{i}}</td>
+					<td>{{centerName}}</td>
+					<td>{{age_limit}}+</td>
+					<td>{{totalCapacity}}</td>
+					<td>{{fee_type}}</td>
+			</tr>
+		{%endfor%}
+		</table>
+	</div>
+   </body>
+</html>

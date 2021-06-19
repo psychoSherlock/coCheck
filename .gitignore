@@ -1,3 +1,7 @@
-sample/
+sample/*
 __pycache__/
 sample/ColorPalette.png
+.env/*
+degub/*
+./sample
+./debug

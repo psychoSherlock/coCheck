@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+  <meta charset="utf-8" />
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  
+  <title>Co-Check! Chack vaccine availabilty without OTP!</title>
+  <meta name="description" content="Cowin vaccine checker" />
+  <meta name="author" content="@psychoSherlock" />
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+  />
+
+  <link rel="stylesheet" href="{{url_for('static', filename='land.css')}}"> 
+
+  <body>
+      <div class="main-container">
+        <a class="fa fa-home home-icon" style="font-size: 2.5em" href="/"></a>
+
+        <h1>CO-Check</h1>
+        <h2>Check covid vaccine availabilty without OTP!</h2>
+        <h3 id="promo">Made with <i class="fa fa-heart" id="heart" aria-hidden="true"></i> by Athul Prakash</h3>
+
+      <div class="main-land-container container-fluid">
+        <div class="main-land-items"></div>
+
+        <label for="place-field">Method to search: </label>
+        <select
+          class="main-land-items"
+          onchange="getMethod()"
+          id="place-field"
+          name="place"
+        >
+          <option selected value="pin-opt">Pin Code</option>
+          <option value="dis-opt">District ID</option>
+        </select>
+
+        <input
+          class="input-field"
+          id="pin-field"
+          type="search"
+          name="search-field"
+          placeholder="Pin Code"
+        />
+
+        <input
+          class="input-field"
+          style="display: none"
+          id="district-field"
+          list="district-id"
+          placeholder="District Name"
+        >
+        </input>
+
+        <datalist id="district-id">
+          <option value="kannur">279</option>
+          <option value="Lorem"></option>
+          <option value="Ipsum"></option>
+        </datalist>
+
+        <input class="main-land-items" 
+          onfocus="this.type = 'date'"
+          placeholder="Date for vaccine"
+          type="text"
+          name="date-field"
+          id="date-field"
+        />
+
+        <button class="main-land-items" onclick="search();">Find</button>
+    </div>
+    </div>
+  </body>
+  <script src="{{url_for('static', filename='land.js')}}"></script>
+</html>
