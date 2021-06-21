@@ -45,6 +45,10 @@ button:hover {
   font-weight: bolder;
 }
 
+button:active {
+  outline: 0;
+}
+
 .home-icon {
   color: #f03a47;
   position: absolute;

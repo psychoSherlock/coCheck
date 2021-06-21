@@ -1,3 +1,4 @@
+
 // For reversing value of date
 var method = document.getElementById("place-field");
 var pinField = document.getElementById("pin-field");
@@ -64,3 +65,6 @@ function getMethod() {
     districtField.style.display = "none";
   }
 }
+
+
+window.onload = getMethod()
