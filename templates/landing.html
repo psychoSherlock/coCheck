@@ -53,11 +53,10 @@
           placeholder="District Name"
         >
         </input>
-
         <datalist id="district-id">
-          <option value="kannur">279</option>
-          <option value="Lorem"></option>
-          <option value="Ipsum"></option>
+          {%for district, id in maps%}
+          <option value="{{district}}">{{id}}</option>
+          {%endfor%}
         </datalist>
 
         <input class="main-land-items" 
@@ -74,3 +73,7 @@
   </body>
   <script src="{{url_for('static', filename='land.js')}}"></script>
 </html>
+
+
+<!--http://jsfiddle.net/7k3sovht/7/-->
+<!--https://stackoverflow.com/questions/29882361/show-datalist-labels-but-submit-the-actual-value-->

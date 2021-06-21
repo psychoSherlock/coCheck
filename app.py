@@ -1,33 +1,34 @@
+# Author Athul Prakash NJ
+
 from flask import Flask, render_template
-from vAPI import cowin
+from vapi import api
+from vapi import getDistricts
 from datetime import date, time
 from waitress import serve
 
-
-
 kannurID = 297
 
+mappings = getDistricts()
 
-kannur = cowin(kannurID)
 app = Flask(__name__)
 
 @app.route('/')
 def index():
-    return render_template('landing.html')
+    return render_template('landing.html', maps=mappings)
 
 @app.route("/district/id=<ID>&date=<date>")
-def onDistrict(ID, date):
-    district = cowin(date)
-    data = district.checkByDis(ID)
+def onDistrictId(ID, date):
+    district = api(date)
+    data = district.checkByDistrictId(ID)
     sessionsLen = len(data['sessions']) 
 
     return render_template('data.html', jsonData=data, items=sessionsLen, time=date)
 
 @app.route("/pincode/pin=<pin>&date=<date>")
-def onPin(pin, date):
-    district = cowin(date)
-    data = district.checkByPin(pin)
-    sessionsLen = len(data['centers']) 
+def onPincode(pin, date):
+    district = api(date)
+    data = district.checkByPincode(pin)
+    sessionsLen = len(data['sessions']) 
     return render_template('data.html', jsonData=data, items=sessionsLen, time=date)
 
 
@@ -48,3 +49,5 @@ if __name__ == '__main__':
         startLog.write(f"\nStarted on {date.today().strftime('%d-%m-%y')}")
         startLog.close()
     serve(app, host=hostIp, port=port)
+    # FOr debug:><
+    # app.run(host=hostIp, port=port, debug=True)

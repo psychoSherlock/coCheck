@@ -5,3 +5,9 @@ sample/ColorPalette.png
 degub/*
 ./sample
 ./debug
+./sample/*
+./debug/*
+sample/sample.json
+sample/sampleCommand.json
+sample/samplePin.txt
+test*

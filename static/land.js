@@ -18,6 +18,7 @@ function search() {
     if (method.value == "dis-opt") {
       // iF district
       var distr = districtField.value;
+      alert(distr)
 
       if (is_valid_datalist_value("district-id", districtField.value)) {
         window.location = "/district/id=" + distr + "&date=" + date;

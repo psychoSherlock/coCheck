@@ -4,18 +4,21 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{url_for('static', filename='500.css')}}">
+    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
     <title>500 Internal Server Error</title>
 </head>
 <body>
 
-    <div class="board">
-        <p id="error">
-          error
-        </p>
-        <p id="code">
-          404
-        </p>
-      </div>
-    
+<div class="Wrapper">
+  <div class="left">Error</div>
+  <div class="right">Error</div>
+  <canvas id="five" width="550" height="205"></canvas>
+</div>
+<h1>Error :(</h1>
+<p>OOPS! It looks like we have a problem!</p>
+<p>Its not you, its me. If you see this page, please report it to the admin pschosherlock@gmail.com along with what made you see this page.</p>
+
+<script type="text/javascript" src="{{url_for('static', filename='500.js')}}"></script>
 </body>
 </html>
