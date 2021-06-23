@@ -1,4 +1,6 @@
 @import url("https://fonts.googleapis.com/css2?family=Do+Hyeon&family=Pangolin&family=Poppins:wght@500&family=Short+Stack&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Arvo&display=swap');
+
 
 :root {
   --font-comic: "Pangolin", cursive;
@@ -7,19 +9,25 @@
   --font-secondary: "Short Stack", cursive;
   --body-bg: #24292e;
   --table-side: #ff5a5f;
+  --danger: #f44336;
+  --success: #04AA6D;
+  --warn:#ff9800;
+  --alert-font: 'Arvo', serif;
 }
 
 body {
   background-color: #24292e;
-  display: flex;
-  flex-direction: column;
-  min-height: 100vh;
 }
 
-h1,
-h2,
-h3 {
-  font-family: var(--font-secondary) !important;
+h1 {
+  color: #ffffff;
+  text-align: center;
+  font-family: var(--font-secondary);
+}
+
+h2{
+
+  font-family: var(--font-prim) !important;
   color: #ffffff;
   text-align: center;
 }
@@ -43,10 +51,6 @@ button:hover {
   background-color: var(--table-side);
   padding: 5%;
   font-weight: bolder;
-}
-
-button:active {
-  outline: 0;
 }
 
 .home-icon {
@@ -118,14 +122,109 @@ label {
   color: #f03a47;
 }
 
-footer {
-  flex: 0 0 50px;
-  margin-top: auto;
+
+
+.alert-container {
+  color: #fff;
+  font-family: var(--alert-font) !;
+  background-color: var(--warn);
+  padding: 0.8px;
+  opacity: 1;
+  transition: opacity 1s ease-in;
+  border-radius: 10px
+
+}
+#msg-holder {
+  margin: 1em;
+  font-family: var(--alert-font) !important;
+  font-weight: bold;
+}
+
+#msg-box {
+  width: 50%;
+  position: absolute;
+  display: none;
+  margin-top: 3em;
+}
+
+footer{
+  margin-top: 70vh;
+  text-align: center;
+  color: #ffffff;
+  font-family: var(--font-secondary);
+  
 }
 
 
+@keyframes slideOut {
+  0%{
+    right: 0;
+  }
+  100%{right: -100%;}
+}
+
+
+
+@keyframes slideIn {
+  0%{
+    right: -100%;
+  }
+  100%{right: 0;}
+}
+
 @media screen and (max-height: 688px) {
+
   footer {
     margin-top: 35em;
+  }
+  #msg-holder {
+    width: 100%;
+  }
+  
+}
+
+
+/*Animation*/
+h1, h2, h3 {
+	-webkit-animation: scale-up-center 0.4s cubic-bezier(0.390, 0.575, 0.565, 1.000) both;
+	        animation: scale-up-center 0.4s cubic-bezier(0.390, 0.575, 0.565, 1.000) both;
+}
+
+@-webkit-keyframes scale-up-center {
+  0% {
+    -webkit-transform: scale(0.5);
+            transform: scale(0.5);
+  }
+  100% {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
+}
+@keyframes scale-up-center {
+  0% {
+    -webkit-transform: scale(0.5);
+            transform: scale(0.5);
+  }
+  100% {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
+}
+
+
+.main-land-container {
+	animation: scale-up-ver-center 0.4s cubic-bezier(0.390, 0.575, 0.565, 1.000) both;
+}
+
+
+@keyframes scale-up-ver-center {
+  0% {
+    transform: scaleY(0.4);
+
+  }
+  100% {
+    transform: scaleY(1);
+    transform: translate(-50%, 0%);
+
   }
 }

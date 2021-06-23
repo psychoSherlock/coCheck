@@ -16,25 +16,27 @@
   <link rel="stylesheet" href="{{url_for('static', filename='land.css')}}"> 
 
   <body>
+      <div id="msg-box" class="alert-container">
+        <p id="msg-holder" class="alert-msg"></p>
+      </div>
       <div class="main-container">
         <a class="fa fa-home home-icon" style="font-size: 2.5em" href="/"></a>
 
         <h1>CO-Check</h1>
-        <h2>Check covid vaccine availabilty without OTP!</h2>
-        <h3 id="promo">Made with <i class="fa fa-heart" id="heart" aria-hidden="true"></i> by Athul Prakash</h3>
+        <h5>Check covid vaccine availabilty without OTP!</h5>
 
       <div class="main-land-container container-fluid">
         <div class="main-land-items"></div>
 
         <label for="place-field">Method to search: </label>
         <select
-          class="main-land-items"
+          class="main-land-items input-option-field"
           onchange="getMethod()"
           id="place-field"
           name="place"
         >
-          <option selected value="pin-opt">Pin Code</option>
-          <option value="dis-opt">District ID</option>
+          <option value="pin-opt">Pin Code</option>
+          <option selected value="dis-opt">District ID</option>
         </select>
 
         <input
@@ -71,6 +73,9 @@
     </div>
     </div>
   </body>
+  <footer>
+    <h3 id="promo">Made with <i class="fa fa-heart" id="heart" aria-hidden="true"></i> by Athul Prakash</h3>
+  </footer>
   <script src="{{url_for('static', filename='land.js')}}"></script>
 </html>
 
