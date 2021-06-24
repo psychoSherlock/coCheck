@@ -13,6 +13,7 @@
   --success: #04AA6D;
   --warn:#ff9800;
   --alert-font: 'Arvo', serif;
+  --that-color:  #f03a47;
 }
 
 body {
@@ -25,7 +26,7 @@ h1 {
   font-family: var(--font-secondary);
 }
 
-h2{
+h2, h3{
 
   font-family: var(--font-prim) !important;
   color: #ffffff;
@@ -53,19 +54,7 @@ button:hover {
   font-weight: bolder;
 }
 
-.home-icon {
-  color: #f03a47;
-  position: absolute;
-  top: 0;
-  left: 0;
-  text-decoration: none;
-  padding: 0.1em;
-}
 
-.home-icon:hover {
-  text-decoration: none;
-  color: #9a4ef1;
-}
 
 .main-land-container {
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.3); /* For card */
@@ -73,12 +62,13 @@ button:hover {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  margin-top: 2em;
+  margin-top: 1em;
   position: absolute; /*For centering */
   left: 50%;
   transform: translate(-50%, 0%);
   text-align: center;
 }
+
 
 .main-land-container:hover {
   box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.5);
@@ -147,13 +137,6 @@ label {
   margin-top: 3em;
 }
 
-footer{
-  margin-top: 70vh;
-  text-align: center;
-  color: #ffffff;
-  font-family: var(--font-secondary);
-  
-}
 
 
 @keyframes slideOut {
@@ -174,11 +157,12 @@ footer{
 
 @media screen and (max-height: 688px) {
 
-  footer {
-    margin-top: 35em;
-  }
   #msg-holder {
     width: 100%;
+  }
+  
+  #msg-box {
+    margin-top: 1em;
   }
   
 }
@@ -228,3 +212,44 @@ h1, h2, h3 {
 
   }
 }
+
+
+
+
+/*Nav-bar*/
+
+.nav__link {
+  margin-left: 0.6em;
+  width: 2.6em;
+  cursor: pointer;
+
+}
+
+.home-icon {
+  color:  var(--that-color);
+  text-decoration: none;
+}
+
+.home-icon:hover {
+  color: #F9F9F9;
+  text-decoration: none;
+}
+
+
+/*Footer*/
+
+
+footer {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  text-align: center;
+  color: #ffffff;
+  font-family: var(--font-secondary);
+}
+
+#promo {
+  font-family: var(--font-secondary) !important;
+}
+

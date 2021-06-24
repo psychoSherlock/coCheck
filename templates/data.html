@@ -2,21 +2,23 @@
 <html>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width">
-	<title>Athul's vaccine checker</title>
+	<title>Co-Check</title>
 	<meta name="description" content="Cowin vaccine checker">
 	<meta name="author" content="@psychoSherlock">
-	<link rel="stylesheet" href="{{url_for('static', filename='style.css')}}"> 
+	<link rel="stylesheet" href="{{url_for('static', filename='style.css')}}">
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
   
 	<body>
-		<a class="fa fa-home home-icon" style="font-size:2.5em;" href="/"></a>
-		<div class="header">
-			
 
-			<h1 class="nor-text">Athul's Personal Cowaccine checker</h1>
-			<h2 class="nor-text">Without OTP :D</h2>
-			<h3 class="nor-text">Found {{items}} centers on {{time}}</h3>
+		<div class="nav__link">
+			<a class="fa fa-home home-icon" style="font-size: 2.5em" href="/"></a>
+		</div>
 
+		<h1>Co-Check</h1>
+		<h3>Check covid vaccine availabilty without OTP!</h3>
+		<h3 class="nor-text">Found {{items}} centers on {{time}}</h3>
+			</div>
+        </div>
 	<div class="graph">
 		<table>
 			<tr>
@@ -36,7 +38,6 @@
 			{%set fee_type = jsonData['sessions'][i]['fee_type']%}
 			{%set fee = jsonData['sessions'][i]['fee']%}
 			
-
 			<tr>
 
 					<td>{{i}}</td>
@@ -49,4 +50,9 @@
 		</table>
 	</div>
    </body>
+
+	<footer>
+		<h3 id="promo">Made with <i class="fa fa-heart" id="heart" aria-hidden="true"></i> by Athul Prakash</h3>
+	</footer>
+
 </html>

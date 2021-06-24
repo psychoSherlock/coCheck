@@ -13,18 +13,22 @@
     href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
   />
 
-  <link rel="stylesheet" href="{{url_for('static', filename='land.css')}}"> 
+  <link rel="stylesheet" href="{{url_for('static', filename='land.css')}}">
 
   <body>
       <div id="msg-box" class="alert-container">
         <p id="msg-holder" class="alert-msg"></p>
       </div>
       <div class="main-container">
+
+        <div class="nav__link">
         <a class="fa fa-home home-icon" style="font-size: 2.5em" href="/"></a>
+        </div>
 
-        <h1>CO-Check</h1>
-        <h5>Check covid vaccine availabilty without OTP!</h5>
+        <h1>Co-Check</h1>
+        <h3>Check covid vaccine availabilty without OTP!</h3>
 
+        
       <div class="main-land-container container-fluid">
         <div class="main-land-items"></div>
 
@@ -55,10 +59,19 @@
           placeholder="District Name"
         >
         </input>
+        
         <datalist id="district-id">
+          {%for i, r in maps%}
+          {%set district = i%}
+          {%set did = r%}
+            <option value="{{did}}">{{district}}</option>
+          
+          <!-- For degub
           <option value="297">Kannur</option>
           <option value="301">Alappuzha</option>
           <option value="305">Kozhikode</option>
+          --> 
+          {%endfor%}
         </datalist>
 
         <input class="main-land-items" 

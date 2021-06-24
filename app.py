@@ -45,9 +45,9 @@ hostIp = '0.0.0.0'
 
 if __name__ == '__main__':
     print(f"Serving app... on http://{hostIp}:{port}")
-    with open('debug/start.log', 'a') as startLog:
-        startLog.write(f"\nStarted on {date.today().strftime('%d-%m-%y')}")
-        startLog.close()
-    serve(app, host=hostIp, port=port)
-    # FOr debug:><
-    # app.run(host=hostIp, port=port, debug=True)
+    # with open('debug/start.log', 'a') as startLog:
+    #     startLog.write(f"\nStarted on {date.today().strftime('%d-%m-%y')}")
+    #     startLog.close()
+    # serve(app, host=hostIp, port=port)
+    # # FOr debug:><
+    app.run(host=hostIp, port=port, debug=True)

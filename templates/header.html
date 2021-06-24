@@ -5,33 +5,22 @@
 	<title>Co-Check</title>
 	<meta name="description" content="Cowin vaccine checker">
 	<meta name="author" content="@psychoSherlock">
-	<link rel="stylesheet" href="{{url_for('static', filename='style.css')}}"> 
+	<link rel="stylesheet" href="{{url_for('static', filename='style.css')}}">  /*FOr test*/
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
   
 	<body>
-		
-		<a class="fa fa-home home-icon" style="font-size:2.5em;" href="/"></a>
-		<div class="header">
-			
 
-			<h1 class="nor-text">Co Check!</h1>
-			<h2 class="nor-text">Check Covid Vaccine Without OTP :D</h2>
-			<h3 class="nor-text">Found {{items}} centers on {{time}}</h3>
+		<div class="nav__link">
+			<a class="fa fa-home home-icon" style="font-size: 2.5em" href="/"></a>
+		</div>
 
-			<div id="date-div">
-				<label class="nor-text" for="place-field">Vaccine Centers in</label>
-	
-				<select id="place-field" name="place">
-					<option value="kannur">Kannur (297)</option>
-				</select>
-	
-				<label class="nor-text" for="date-field">for</label>
-	
-				<input type="date" name="Choose date" id="date-field">
-				
-				<button style="background-color:#9a4ef1" onclick="searchDate()">Find</button>
-                {% block content %}
-                {% endblock %}
+		<h1>CO-Check</h1>
+		<h3>Check covid vaccine availabilty without OTP!</h3>
+		<h3 class="nor-text">Found {{items}} centers on {{time}}</h3>
+
+				<footer>
+					<h3 id="promo">Made with <i class="fa fa-heart" id="heart" aria-hidden="true"></i> by Athul Prakash</h3>
+				</footer>
 			</div>
         </div>
 

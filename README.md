@@ -12,3 +12,8 @@
 * Header on every page.
 * CSS FOR options
 * Custom alert boxes
+* Fix css on android {
+    1. The bottom footer
+    2. The alert box margin-top
+    3. The text in data page.
+}

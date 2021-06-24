@@ -39,8 +39,6 @@ function clean() {
 
 
 
-
-
 function search() {
   // Validate inputs
   date = reverseDate("date-field");
@@ -52,6 +50,7 @@ function search() {
       var distr = districtField.value;
 
       if (is_valid_datalist_value("district-id", districtField.value)) {
+        warn("Please wait while the server fetch data for " + distr , '--success')
         window.location = "/district/id=" + distr + "&date=" + date;
       }
 
@@ -64,6 +63,7 @@ function search() {
 
       if (pincode) {
         // If pincode
+        warn("Please wait while the server fetch data for " + pincode , '--success')
         window.location = "/pincode/pin=" + pincode + "&date=" + date;
       } else {
         warn("No Pin code specified? Trying to trick my website :(", "--warn");
@@ -96,5 +96,11 @@ function getMethod() {
   }
 }
 
+function load(){
+  getMethod()
+  districtField.value = ""
+  pinField.value=""
+}
 
-window.onload = getMethod()
+
+window.onload = load()
