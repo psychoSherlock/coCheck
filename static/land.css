@@ -18,6 +18,7 @@
 
 body {
   background-color: #24292e;
+  min-height: 45em;
 }
 
 h1 {
@@ -47,6 +48,7 @@ button {
   transition: all 0.5s;
   background-color: #9a4ef1;
   cursor: pointer;
+  outline: none;
 }
 button:hover {
   background-color: var(--table-side);
@@ -119,11 +121,11 @@ label {
   font-family: var(--alert-font) !;
   background-color: var(--warn);
   padding: 0.8px;
-  opacity: 1;
-  transition: opacity 1s ease-in;
-  border-radius: 10px
+  border-radius: 10px;
 
 }
+
+/*
 #msg-holder {
   margin: 1em;
   font-family: var(--alert-font) !important;
@@ -134,7 +136,6 @@ label {
   width: 50%;
   position: absolute;
   display: none;
-  margin-top: 3em;
 }
 
 
@@ -155,17 +156,6 @@ label {
   100%{right: 0;}
 }
 
-@media screen and (max-height: 688px) {
-
-  #msg-holder {
-    width: 100%;
-  }
-  
-  #msg-box {
-    margin-top: 1em;
-  }
-  
-}
 
 
 /*Animation*/
@@ -240,11 +230,12 @@ h1, h2, h3 {
 
 
 footer {
-  position: fixed;
-  left: 0;
+
+  position: absolute;
   bottom: 0;
-  width: 100%;
-  text-align: center;
+  left: 0;
+  right: 0;
+  margin: auto;
   color: #ffffff;
   font-family: var(--font-secondary);
 }
