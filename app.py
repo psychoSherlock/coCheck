@@ -4,7 +4,7 @@ from flask import Flask, render_template
 from vapi import api
 from vapi import getDistricts
 from datetime import date, time
-from waitress import serve
+#from waitress import serve
 
 kannurID = 297
 
@@ -43,11 +43,11 @@ def page_not_found(e):
 port = '8080'
 hostIp = '0.0.0.0'
 
-if __name__ == '__main__':
-    print(f"Serving app... on http://{hostIp}:{port}")
-    with open('debug/start.log', 'a') as startLog:
-        startLog.write(f"\nStarted on {date.today().strftime('%d-%m-%y')}")
-        startLog.close()
-    serve(app, host=hostIp, port=port)
+#if __name__ == '__main__':
+#    print(f"Serving app... on http://{hostIp}:{port}")
+#    with open('debug/start.log', 'a') as startLog:
+#        startLog.write(f"\nStarted on {date.today().strftime('%d-%m-%y')}")
+#        startLog.close()
+#    serve(app, host=hostIp, port=port)
     # FOr debug:><
     #app.run(host=hostIp, port=port, debug=True)
