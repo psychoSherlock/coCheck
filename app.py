@@ -1,35 +1,24 @@
 # Author Athul Prakash NJ
 
 from flask import Flask, render_template
-from vapi import api
-from vapi import getDistricts
-from datetime import date, time
 #from waitress import serve
 
-kannurID = 297
-
-mappings = getDistricts()
 
 app = Flask(__name__)
 
 @app.route('/')
 def index():
-    return render_template('landing.html', maps=mappings)
+    return render_template('landing.html')
 
 @app.route("/district/id=<ID>&date=<date>")
 def onDistrictId(ID, date):
-    district = api(date)
-    data = district.checkByDistrictId(ID)
-    sessionsLen = len(data['sessions']) 
-
-    return render_template('data.html', jsonData=data, items=sessionsLen, time=date)
+    url = f"https://cdn-api.co-vin.in/api/v2/appointment/sessions/public/findByDistrict?district_id={ID}&date={date}"
+    return render_template('data.html',time=date, url=url)
 
 @app.route("/pincode/pin=<pin>&date=<date>")
 def onPincode(pin, date):
-    district = api(date)
-    data = district.checkByPincode(pin)
-    sessionsLen = len(data['sessions']) 
-    return render_template('data.html', jsonData=data, items=sessionsLen, time=date)
+    url = f"https://cdn-api.co-vin.in/api/v2/appointment/sessions/public/findByPin?pincode={pin}&date={date}"
+    return render_template('data.html',time=date, url=url)
 
 
 @app.errorhandler(404)
@@ -40,8 +29,8 @@ def page_not_found(e):
 def page_not_found(e):
     return render_template('500.html'), 500
 
-port = '8080'
-hostIp = '0.0.0.0'
+#port = '8080'
+#hostIp = '0.0.0.0'
 
 #if __name__ == '__main__':
 #    print(f"Serving app... on http://{hostIp}:{port}")
