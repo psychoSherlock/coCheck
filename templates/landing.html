@@ -4,8 +4,9 @@
    <meta charset="utf-8" />
    <meta name="viewport" content="width=device-width, initial-scale=1">
    <title>Co-Check! Chack vaccine availabilty without OTP!</title>
-   <meta name="description" content="Cowin vaccine checker" />
+   <meta name="description" content="Because I know, you hate OTP. Me too :D" />
    <meta name="author" content="@psychoSherlock" />
+
    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
    <link
       rel="stylesheet"
@@ -20,6 +21,14 @@
     <link rel="manifest" href="{{url_for('static', filename='site.manifest')}}">
 <!--Favicon-->
 
+
+
+<!--OG Meta data-->
+   <meta property="og:title" content="Co-Check" />
+   <meta property="og:description" content="Check covid vaccine availabilty without OTP (I KNOW YOU HATE OTP, ME 2)" />
+   <meta property="og:url" content="https://co-check.herokuapp.com" />
+   <meta property="og:image" content="{{url_for('static', filename='vaccine.png')}}" />
+<!--OG Meta data-->
    <body id='body'>
       <!--
          <div id="msg-box" class="alert-container">
@@ -839,6 +848,3 @@
    </footer>
    <script src="{{url_for('static', filename='land.js')}}"></script>
 </html>
-<!--http://jsfiddle.net/7k3sovht/7/-->
-<!--https://stackoverflow.com/questions/29882361/show-datalist-labels-but-submit-the-actual-value-->
-
