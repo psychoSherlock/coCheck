@@ -221,7 +221,7 @@ h1, h2, h3 {
 }
 
 .home-icon:hover {
-  color: #F9F9F9;
+  color: var(--success);
   text-decoration: none;
 }
 

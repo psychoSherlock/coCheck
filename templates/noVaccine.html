@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Co-Check: No Vaccine Centers Found</title>
+
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+
+    <link rel="stylesheet" href="{{url_for('static',filename='oops.css')}}" />
+  </head>
+
+  <body>
+    <div class="nav__link">
+      <a class="fa fa-home home-icon" style="font-size: 2.5em" href="/"></a>
+    </div>
+
+    <div id="oops">
+      <h1>Oops there is no vaccine for that time.</h1>
+      <img src="{{url_for('static', filename=pic)}}" alt="OOPS!" />
+      <h2>Check again later or use one of these tips:</h2>
+
+      <ul>
+        <li>
+          Check vaccine by District Id than Pincode. This searches over a wide
+          area and may give you more results
+        </li>
+        <li>
+          Try searching for today or tommorrow. More closer the date more likely
+          to recieve vaccine centers
+        </li>
+        <li>
+          Search very frequently. This is the main reason I made this website.
+          So I wont have to do OTP always. You can use this website as often as
+          you want before checking on Cowin's official website
+        </li>
+      </ul>
+    </div>
+  </body>
+</html>

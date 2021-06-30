@@ -2,6 +2,7 @@
 
 from flask import Flask, render_template
 #from waitress import serve
+import random
 
 
 app = Flask(__name__)
@@ -19,6 +20,14 @@ def onDistrictId(ID, date):
 def onPincode(pin, date):
     url = f"https://cdn-api.co-vin.in/api/v2/appointment/sessions/public/findByPin?pincode={pin}&date={date}"
     return render_template('data.html',time=date, url=url)
+
+babyList = ["babey1.jpg", "babey2.jpg", "babey3.png"]
+
+@app.route("/noCenters")
+def noVaccine():
+    baby = random.choice(babyList)
+    return render_template('noVaccine.html', pic=baby)
+
 
 
 @app.errorhandler(404)

@@ -49,15 +49,9 @@ td {
     width: 100%;
     float: left;
   }
-
-  header {
-    width: 100%;
-    margin-left: 5em;
-  }
-
+  header,
   footer {
-    width: 100%;
-    margin-left: 5em;
+    min-width: 130%;
   }
 }
 
@@ -77,7 +71,6 @@ h3 {
 h1,
 h2,
 h3 {
-
   -webkit-animation: scale-up-center 0.4s cubic-bezier(0.39, 0.575, 0.565, 1)
     both;
   animation: scale-up-center 0.4s cubic-bezier(0.39, 0.575, 0.565, 1) both;
@@ -123,7 +116,7 @@ h1 {
 }
 
 .home-icon:hover {
-  color: #f9f9f9;
+  color: var(--success);
   text-decoration: none;
 }
 
@@ -140,33 +133,31 @@ footer {
   font-family: var(--font-secondary) !important;
 }
 
-
 #heart {
-	color: #f03a47;
+  color: #f03a47;
 }
 
 #status-box {
   text-align: center;
 }
 
-
 #status {
   color: #ffffff;
   font-family: var(--font-prim) !important;
 }
 
-#status.searching::after{
+#status.searching::after {
   content: " Searching..";
   color: var(--warn);
 }
 
-#status.found::after{
+#status.found::after {
   content: " Found!";
   color: #00ff00;
 }
 
-
-#status.not-found::after{ /*Need to add this in js*/
-  content: 'Error. The code wont work if you are not from India';
+#status.not-found::after {
+  /*Need to add this in js*/
+  content: "Error. The code wont work if you are not from India";
   color: var(--danger);
 }

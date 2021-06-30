@@ -1,0 +1,74 @@
+@import url("https://fonts.googleapis.com/css2?family=Arvo&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Do+Hyeon&family=Pangolin&family=Poppins:wght@500&family=Short+Stack&display=swap");
+:root {
+  --font-comic: "Pangolin", cursive;
+  --font-cur: "Poppins", sans-serif;
+  --font-prim: "Do Hyeon", sans-serif;
+  --font-secondary: "Short Stack", cursive;
+  --body-bg: #24292e;
+  --table-side: #ff5a5f;
+  --danger: #f44336;
+  --success: #04aa6d;
+  --warn: #ff9800;
+  --alert-font: "Arvo", serif;
+  --that-color: #f03a47;
+}
+
+body {
+  background-color: #24292e;
+  
+}
+
+#oops {
+  margin: 6em;
+  border: 2px solid var(--danger);
+  padding: 1em;
+}
+
+h1 {
+  color: rgba(255, 0, 0, 0.788);
+  font-family: var(--alert-font);
+}
+
+li {
+  font-size: large;
+  color: #ffff;
+  font-family: var(--font-cur);
+}
+
+h2 {
+  color: #ffff;
+  font-family: var(--font-prim);
+}
+
+img {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 50%;
+  height: 50%;
+  border-radius: 1em;
+}
+
+.nav__link {
+  margin-left: 0.6em;
+  width: 2.6em;
+  cursor: pointer;
+}
+
+.home-icon {
+  color: var(--that-color);
+  text-decoration: none;
+}
+
+.home-icon:hover {
+  color: var(--success);
+  text-decoration: none;
+}
+
+
+@media only screen and (max-width: 680px) {
+  #oops {
+    margin: 1em;
+  }
+}
