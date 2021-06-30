@@ -1,19 +1,9 @@
-## Simple Covid Vaccine registeration for my hometown
+# CO-Check
 
-### TO do:
-* Add csv support[Done]
-* Footer for landing page and other css for elements
-* Debug the api [Done]
-* 404 and 500 [Done]
-* District mappings on land page [Done]
-* Different pages for district and pincodes [No need]
-* Add error codes [Done]
-* List redirection js on land page [Done]
-* Header on every page. [Done]
-* CSS FOR options [No need]
-* Custom alert boxes[Done]
-* Fix css on android {
-    1. The bottom footer
-    2. The alert box margin-top
-    3. The text in data page.
-}
+## Sample covid vaccine checker
+
+### The script was meant to be checking data on server-side(or backend)
+### But unfortunatey, the indian cowin api doesnot allow non-indians to check for vaccines,(and I dont know why).
+### So I had to make it client side. I dont want to handle dynamic urls so I had flask to handle it itself so I dont have to worry
+
+### You can checkout the server side code on the branch ```main```

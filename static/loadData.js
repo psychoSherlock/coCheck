@@ -1,12 +1,5 @@
 
-
-//let api = fetch(distQuery); // request module
-
-//api.then(function(resp){ // After making req
-//    resp.json().then(function(text){ // After geting json
-//        return text
-//    })
-//})
+let status_elem = document.getElementById('status')
 
 const tellMany = document.getElementById('how_many')
 
@@ -17,6 +10,9 @@ function callCowinApi(url){ //function
     api.then(function(resp){
         resp.json().then(function(data){ //converts to json
 
+
+            status_elem.classList.remove('searching')
+            status_elem.classList.add('found')
 
             let sessionsLen = data['sessions'] //sessions
             tellMany.innerHTML = sessionsLen.length // tell how many centers are there
@@ -41,5 +37,10 @@ function callCowinApi(url){ //function
     })
 }
 
+function loaded(){
+    callCowinApi(url) 
+    status_elem.classList.add('searching')
+    status_elem.classList.remove('found')
+}
 
-document.onload = callCowinApi(url)
+document.onload = loaded()

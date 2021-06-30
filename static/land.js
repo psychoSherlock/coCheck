@@ -50,7 +50,6 @@ function reverseDate(date) {
       var distr = districtField.value;
       
       if (is_valid_datalist_value("district-id", districtField.value)) {
-        alert("Please wait while the server fetch data for " + distr)
         window.location = "/district/id=" + distr + "&date=" + date;
       }
       
@@ -63,7 +62,6 @@ function reverseDate(date) {
       
       if (pincode) {
         // If pincode
-        alert("Please wait while the server fetch data for " + pincode)
         window.location = "/pincode/pin=" + pincode + "&date=" + date;
       } else {
         alert("No Pin code specified? Trying to trick my website :(");
