@@ -1,6 +1,6 @@
 # CO-Check
-
-## Sample covid vaccine checker
+## Simple covid vaccine checker without OTP (For Indians)
+### Check it out here, <https://co-check.herokuapp.com> it may take some time to load, as it is hosted on heroku free plan.
 
 ### The script was meant to be checking data on server-side(or backend)
 ### But unfortunatey, the Indian cowin api doesnot allow non-indians to check for vaccines,(and I dont know why).
