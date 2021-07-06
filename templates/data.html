@@ -5,47 +5,49 @@
 	<title>Co-Check</title>
 	<meta name="description" content="Cowin vaccine checker">
 	<meta name="author" content="@psychoSherlock">
-	<link rel="stylesheet" href="style.css">
-	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-	
 	<link rel="stylesheet" href="{{url_for('static', filename='style.css')}}">
-
-	   <!--Favicon-->
-	   <link rel="apple-touch-icon" sizes="180x180" href="{{url_for('static', filename='apple-touch-icon.png')}}">
-	   <link rel="icon" type="image/png" sizes="32x32" href="{{url_for('static', filename='favicon-32x32.png')}}">
-	   <link rel="icon" type="image/png" sizes="16x16" href="{{url_for('static', filename='favicon-16x16.png')}}">
-	   <link rel="manifest" href="{{url_for('static', filename='site.manifest')}}">
-   		<!--Favicon-->
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
   
-
 	<body>
 
 		<div class="nav__link">
 			<a class="fa fa-home home-icon" style="font-size: 2.5em" href="/"></a>
 		</div>
 		<header>
-
-			<div id="status-box">
-				<h4 id="status">Status: </h4>
-			</div>
 			<h1>Co-Check</h1>
 			<h3>Check covid vaccine availabilty without OTP!</h3>
-			<h3 class="nor-text">Found <span id="how_many"></span> centers on {{time}}</h3>
+			<h3 class="nor-text">Found {{items}} centers on {{time}}</h3>
 		</header>
 			</div>
         </div>
 	<div class="graph">
 		<table>
-
-			<!--Maybe later, I should shange this. So that if there is no data, we could display something else. But thats for another time-->
 			<tr>
 				<th>ID</th>
 				<th>Center Name</th>
 				<th>Age Limit</th>
 				<th>Total Available</th>
-				<th>Fee Type</th>
+				<th>Fee type</th>
 			</tr>
+		{%for i in range(items)%}
+			{%set centerName = jsonData['sessions'][i]['name']%}
+			{%set vaccineName = jsonData['sessions'][i]['vaccine']%}
+			{%set age_limit = jsonData['sessions'][i]['min_age_limit']%} 
+			{%set totalCapacity = jsonData['sessions'][i]['available_capacity']%}
+			{%set dose1 = jsonData['sessions'][i]['available_capacity_dose1']%}
+			{%set dose2 = jsonData['sessions'][i]['available_capacity_dose2']%}
+			{%set fee_type = jsonData['sessions'][i]['fee_type']%}
+			{%set fee = jsonData['sessions'][i]['fee']%}
+			
+			<tr>
 
+					<td>{{i}}</td>
+					<td>{{centerName}}</td>
+					<td>{{age_limit}}+</td>
+					<td>{{totalCapacity}}</td>
+					<td>{{fee_type}}</td>
+			</tr>
+		{%endfor%}
 		</table>
 	</div>
    </body>
@@ -54,9 +56,4 @@
 		<h3 id="promo">Made with <i class="fa fa-heart" id="heart" aria-hidden="true"></i> by Athul Prakash</h3>
 	</footer>
 
-	<script>
-		const url = "{{url}}"
-	</script>
-
-	<script src="{{url_for('static', filename='loadData.js')}}"></script>
 </html>

@@ -37,6 +37,9 @@ td {
   justify-content: center;
   align-items: center;
 }
+.header {
+  text-align: center;
+}
 
 .nor-text {
   color: white;
@@ -48,16 +51,6 @@ td {
     display: block;
     width: 100%;
     float: left;
-  }
-
-  header {
-    width: 100%;
-    margin-left: 5em;
-  }
-
-  footer {
-    width: 100%;
-    margin-left: 5em;
   }
 }
 
@@ -145,28 +138,4 @@ footer {
 	color: #f03a47;
 }
 
-#status-box {
-  text-align: center;
-}
 
-
-#status {
-  color: #ffffff;
-  font-family: var(--font-prim) !important;
-}
-
-#status.searching::after{
-  content: " Searching..";
-  color: var(--warn);
-}
-
-#status.found::after{
-  content: " Found!";
-  color: #00ff00;
-}
-
-
-#status.not-found::after{ /*Need to add this in js*/
-  content: 'Error. The code wont work if you are not from India';
-  color: var(--danger);
-}
