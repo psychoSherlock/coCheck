@@ -16,7 +16,11 @@ function callCowinApi(url){ //function
 
             let sessionsLen = data['sessions'] //sessions
             if(sessionsLen==0){window.location = '/noCenters'}
+            
+            else if (data['message']=="Forbidden") {status_elem.classList.remove('searching'); status_elem.classList.add('forbidden')} // Forbidden message
+            
             else 
+
             {
                 tellMany.innerHTML = sessionsLen.length // tell how many centers are there
 

@@ -156,8 +156,50 @@ footer {
   color: #00ff00;
 }
 
-#status.not-found::after {
+#status.forbidden::after {
   /*Need to add this in js*/
-  content: "Error. The code wont work if you are not from India";
+  content: "Error: App works only from India";
   color: var(--danger);
+}
+
+
+
+
+
+.__icon {
+  font-size: 2em;
+  color: #ffffff;
+  text-decoration: none;
+}
+
+.__icon:hover {
+  text-decoration: none;
+}
+
+.__icon:nth-child(1):hover {
+  color:#4078c0;
+}
+
+.__icon:nth-child(2):hover {
+  color:#00B6F1;
+}
+
+
+.__icon:nth-child(3):hover {
+  color:#e95950;
+}
+
+.nav__icons {
+  display: table;
+  margin: 0 auto;
+  margin-bottom: 0.5em;
+  
+}
+
+.__icon + .__icon {
+  margin-left: 1em;
+}
+
+.nav__icons {
+  margin-bottom: 0.2em;
 }
