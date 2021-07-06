@@ -15,7 +15,7 @@ function callCowinApi(url){ //function
             status_elem.classList.add('found')
 
             let sessionsLen = data['sessions'] //sessions
-            if(sessionsLen==0){window.location = '/noCenters'}
+            if(sessionsLen==0){status_elem.classList.remove('found');status_elem.classList.add('searching');window.location = '/noCenters'}
             
             else if (data['message']=="Forbidden") {status_elem.classList.remove('searching'); status_elem.classList.add('forbidden')} // Forbidden message
             
